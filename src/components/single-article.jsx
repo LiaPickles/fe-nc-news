@@ -5,6 +5,7 @@ import { getArticles } from "../api";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Comments from "./comments";
 
 const SingleArticle = () => {
   const [singleArticle, setSingleArticle] = useState([]);
@@ -35,7 +36,9 @@ const SingleArticle = () => {
         <p>Votes: {singleArticle.votes}</p>
         <p>Comments: {singleArticle.comment_count}</p>
       </ul>
+      <Comments article_id={article_id}/>
     </Container>
+    
   );
 };
 
