@@ -5,28 +5,25 @@ const ncNewsApi = axios.create({
 });
 
 export const getArticles = (article_id) => {
-  if (article_id){
-    return ncNewsApi
-    .get(`/articles/${article_id}`)
-    .then((res) => {
-      return res.data.article
-    })
+  if (article_id) {
+    return ncNewsApi.get(`/articles/${article_id}`).then((res) => {
+      return res.data.article;
+    });
   } else {
-  return ncNewsApi
-    .get(`/articles`)
-    .then((res) => {
+    return ncNewsApi.get(`/articles`).then((res) => {
       return res.data;
     });
   }
 };
 
-
 export const getComments = (article_id) => {
- return ncNewsApi
- .get(`/articles/${article_id}/comments`)
- .then((res) => {
-  return res.data.comments
- })
+  return ncNewsApi.get(`/articles/${article_id}/comments`).then((res) => {
+    return res.data.comments;
+  });
+};
 
-
-}
+export const patchArticleVotes = (article_id, newVotes) => {
+  return ncNewsApi.patch(`/articles/${article_id}`, newVotes).then((res) => {
+    return res.data.article;
+  });
+};
