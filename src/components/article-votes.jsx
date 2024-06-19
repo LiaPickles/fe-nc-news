@@ -17,17 +17,12 @@ const ArticleVotes = ({ article_id }) => {
   }, [article_id]);
 
   const handleVote = (increment) => {
-    const originalVotes = articleVotes;
-    const newVotes = articleVotes + increment;
-    setArticleVotes(newVotes);
+    setArticleVotes((currVotes) => currVotes + increment ); 
     setErr(null);
 
     patchArticleVotes(article_id, { inc_votes: increment })
-      .then((article) => {
-        setArticleVotes(article.votes);
-      })
       .catch((err) => {
-        setArticleVotes(originalVotes);
+        setArticleVotes((currVotes) => currVotes - increment );   
         setErr("something went wrong, please try again");
       });
   };
