@@ -32,6 +32,18 @@
     font-size: 12px;
 }
 
+.login {
+    text-align: centre;
+}
+
+.close-button {
+    position: absolute;
+    bottom: 10%;
+    right: 1%;
+}
+
+
+
 
 /* * {
     border: 1px solid black;;

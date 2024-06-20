@@ -35,3 +35,12 @@ export const postArticleComments = (article_id, commentObj) => {
       return res.data.comment;
     });
 };
+
+export const deleteComment = (commentId) => {
+  return ncNewsApi
+  .delete(`/comments/${commentId}`)
+  .then((res) => {
+    console.log(res.data)
+    return res.data
+  })
+}
