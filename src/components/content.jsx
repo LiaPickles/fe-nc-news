@@ -11,6 +11,8 @@ const Content = () => {
 
   const navigate = useNavigate();
   const { article_id } = useParams();
+
+ 
  
 
   useEffect(() => {

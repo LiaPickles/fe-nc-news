@@ -8,7 +8,7 @@ import Col from "react-bootstrap/Col";
 import Comments from "./comments";
 import ArticleVotes from "./article-votes";
 
-const SingleArticle = () => {
+const SingleArticle = ({user}) => {
   const [singleArticle, setSingleArticle] = useState([]);
   const { article_id } = useParams();
 
@@ -37,7 +37,7 @@ const SingleArticle = () => {
         <ArticleVotes article_id={article_id}/>
         <p>Comments: {singleArticle.comment_count}</p>
       </ul>
-      <Comments article_id={article_id}/>
+      <Comments article_id={article_id} />
     </Container>
     
   );
