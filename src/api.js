@@ -55,3 +55,11 @@ export const getArticlesByTopic = (topic) => {
       return res.data.articles;
     });
 };
+
+export const getArticlesWithQuery = (sortByQuery) => {
+  return ncNewsApi
+  .get("/articles", {params: {sort_by: sortByQuery}})
+  .then((res) => {
+    return res.data.articles
+  })
+}
